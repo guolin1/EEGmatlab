@@ -64,25 +64,25 @@ for itime = 1:nTimes
     for icv = 1:nFold
         trainfold = traindata(cvlabels~=icv, :);
         testfold = testdata(cvlabels==icv, :);
-		% Feature preprocessing
+	% Feature preprocessing
         if preprocessoption(1)==1 % standardization
             % Compute mean & standard deviation from the training data [at each feature separately]
             meanvec = nanmean(trainfold); stdvec = nanstd(trainfold);
-            % Standardizes testing data & training data using the same mean & std.
-            trainfold = (trainfold-meanvec)./stdvec; trainfold(trainfold>3) = 3;
-            testfold = (testfold-meanvec)./stdvec; testfold(testfold>3) = 3;
+	    % Standardizes testing data & training data using the same mean & std.
+	    trainfold = (trainfold-meanvec)./stdvec; 
+	    testfold = (testfold-meanvec)./stdvec; 
         end
         if preprocessoption(2) == 1 % windsorization
-            %threshold all data at +/- 3 to curb the impact of outliers on SVM performance
-            trainfold(trainfold<-3) = -3;
-            testfold(testfold<-3) = -3;
+	    %threshold all data at +/- 3 to curb the impact of outliers on SVM performance
+            trainfold(trainfold>3) = 3; testfold(testfold>3) = 3;
+            trainfold(trainfold<-3) = -3; testfold(testfold<-3) = -3;
         end
         if preprocessoption(3) == 1 % normalization
             % Normalizes between 0 and 1 according to the training data
             trainfold = (trainfold-min(trainfold))./(max(trainfold)-min(trainfold));
             testfold = (testfold-min(trainfold))./(max(trainfold)-min(trainfold));
         end
-		% Labels are automatically computed given that data structure follows the requirement stated under description.
+	% Labels are automatically computed given that data structure follows the requirement stated under description.
         trainlabel = grouplabels(cvlabels~=icv);
         testlabel = grouplabels(cvlabels==icv);
         if svmoption %liblinear
