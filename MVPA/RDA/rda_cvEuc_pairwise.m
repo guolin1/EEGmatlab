@@ -1,8 +1,17 @@
 function eucDistance = cvEuc_pairwise(iidata,jjdata,nConds)
 %% Description
-% RSAClassify(data,nConds)
-% Data is a matrix of data for a specific timepoint, nConds = number of
-% conditions
+% cvEuc(iidata,nConds) for regular RDA
+% cvEuc(iidata,jjdata,nConds) for temporal generalization, where jjdata can be ERPs from a different timepoint
+% Data is a numConditions x numObservationsx numFeatures array 
+% for a specific timepoint, nConds = number of conditions
+% cvEuc computes cross-validated euclidian distance (cvEuc), thus cvEuc is unbiased
+% where the expected distance is 0 if H0 is true, and expected distance ~= 0 if 
+% H0 is false. distance output can be negative given the nature of how it is 
+% calculated, which computes the covariance between two independent distance
+% calculations. 
+% Cross-validation is computed using all pairwise observations across two conditions.
+% Equivalient to nChoose2 where n = numObservations per condition.
+
 if nargin<3
     nConds = jjdata;
     for iCond = 1:nConds
