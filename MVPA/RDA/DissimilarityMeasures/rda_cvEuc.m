@@ -26,7 +26,7 @@ if nargin<3
             % create cross validation & group labels
             cvlabels = [1:nFold,1:nFold];
             grouplabels = [ones(size(ijData, 1)/2,1); ones(size(ijData, 1)/2,1).*2];
-            
+           
             traindata = ijData(:,:); testdata = ijData(:,:);
             for icv = 1:nFold
                 trainfold = traindata(cvlabels~=icv, :);
