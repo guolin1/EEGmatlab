@@ -49,7 +49,7 @@ for ichan = 1:size(Data,1)
         % convolve
         as = ifft( waveX.*dataX );
         
-        % trim and reshape2 to 40 Hz in
+        % trim and reshape
         as = reshape(as(halfw:end-halfw+1),npoints,ntrials);
         timefreqdata(ichan,:,fi,:) = abs(as).^2;
     end
