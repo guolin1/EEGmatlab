@@ -12,10 +12,11 @@ function timefreqdata = timefreq_wavelet(Data,freqrange,freqstep,fwhm_ncycles)
 % Output:
 %       timefreqdata: nChannels x nTimes x nFrequencies x nEpochs
 %
-% IMPORTANT: Note that Additional processing such as averaging, multivaraite
-% noise normalisation, and baseline corrections still need to be considered.
-% baseline correction example [after averaging]: log10(data./data_baseline)*10
-%
+% Note that the output (timefreqdata) is not baseline corrected. Additional
+% processing such as averaging (across epochs) and baseline corrections
+% still need to be considered.
+% avera
+% baseline correction example:
 %% Script
 %  check number of inputs
 if nargin < 3
