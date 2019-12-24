@@ -13,6 +13,8 @@ function eucDistance = cvEuc(iidata,jjdata,nConds)
 % is calculated on all but one pair of observations (1 from each condition), and 1
 % euclidian distance is calculated from the average of all the other observations.
 % and cvEuc is the dot product between the distances across features. 
+%
+% Lawrence December 2019
 
 if nargin<3
     nConds = jjdata;
