@@ -11,7 +11,8 @@ function eucDistance = cvEuc_pairwise(iidata,jjdata,nConds)
 % calculations. 
 % Cross-validation is computed using all pairwise observations across two conditions.
 % Equivalient to nChoose2 where n = numObservations per condition.
-
+%
+% Lawrence December 2019
 if nargin<3
     nConds = jjdata;
     for iCond = 1:nConds

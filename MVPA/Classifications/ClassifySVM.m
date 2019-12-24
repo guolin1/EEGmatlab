@@ -37,7 +37,8 @@ function [accuracies] = ClassifySVM(data1, data2, preprocessoption, svmoption, p
 %						However, if parpool is used, it's better to
 %						use parfor on the time dimension outside of 
 %						this function.
-
+%
+% Lawrence December 2019
 %% check input
 if nargin < 3
     svmoption = 0; %libsvm

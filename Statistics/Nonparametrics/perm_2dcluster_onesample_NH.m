@@ -8,6 +8,8 @@
 %     a cluster of t-values is considered significant if that cluster size is
 %     greater than 95% of all max cluster size obtained from the sign-based
 %     permutation tests.
+%
+% Lawrence December 2019
 function [h_corrected, crit_h_size, h_true] = perm_2dcluster_onesample_NH(data, thresh, nperms, tail)
 rng('Shuffle');
 if tail == -1
