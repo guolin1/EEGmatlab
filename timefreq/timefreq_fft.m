@@ -18,6 +18,7 @@ function timefreqdata = timefreq_fft(Data,timepoints,freqrange,SampRate,timebins
 % noise normalisation, and baseline corrections still need to be considered.
 % baseline correction example [after averaging]: log10(data./data_baseline)*10
 %
+% Lawrence December 2019
 if nargin < 3
     disp('Setting sampling rate to 256 Hz. Change if this is not correct!');
     disp('Setting timebin size to 200 ms');
