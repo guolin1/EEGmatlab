@@ -16,6 +16,7 @@ function timefreqdata = timefreq_wavelet(Data,freqrange,freqstep,fwhm_ncycles)
 % noise normalisation, and baseline corrections still need to be considered.
 % baseline correction example [after averaging]: log10(data./data_baseline)*10
 %
+% Lawrence December 2019
 %% Script
 %  check number of inputs
 if nargin < 3
