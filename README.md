@@ -1,5 +1,4 @@
 # EEGmatlab
-Some of the multivariate analysis scripts I wrote for my PhD projects (EEG data)
 
 MVPA:
   1. linear SVM Classification [one-vs-one using leave out one cross validation]
