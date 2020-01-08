@@ -1,4 +1,4 @@
-# EEGmatlab
+# EEG Multivariate Analyses
 
 MVPA:
   1. [linear SVM Classification](https://github.com/guolin1/EEGmatlab/blob/master/MVPA/Classifications/ClassifySVM.m) [one-vs-one using leave out one cross validation]
