@@ -1,4 +1,4 @@
-function eucDistance = cvEuc_pairwise(iidata,jjdata,nConds)
+function eucDistance = rda_cvEuc_pairwise(iidata,jjdata,nConds)
 %% Description
 % cvEuc(iidata,nConds) for regular RDA
 % cvEuc(iidata,jjdata,nConds) for temporal generalization, where jjdata can be ERPs from a different timepoint
